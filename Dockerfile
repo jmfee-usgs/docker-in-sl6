@@ -5,7 +5,7 @@ FROM cern/slc6-base:20160405
 # install docker-io package
 RUN yum install -y docker-io
 
-# docker/iptables depends on this
+# docker/iptables (within a container) depends on this
 RUN /bin/bash -c " \
     mkdir -p /lib/modules/`uname -r` && \
     depmod -a \
